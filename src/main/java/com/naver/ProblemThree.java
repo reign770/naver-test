@@ -7,7 +7,7 @@ package com.naver;
  * @Date 2020/4/10 15:03
  * @Modified By:
  */
-public class ProbleThree {
+public class ProblemThree {
 
     public static class MyQueue {
 
