@@ -61,10 +61,6 @@ public class ProblemOne {
         final Thread threadB = new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
-                    cdC.await();
-                } catch (InterruptedException e) {
-                }
                 System.out.print(taskB.execute() + ",");
                 cdG.countDown();
                 cdE.countDown();
