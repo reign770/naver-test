@@ -66,7 +66,6 @@ public class ProblemOne {
                 } catch (InterruptedException e) {
                 }
                 System.out.print(taskB.execute() + ",");
-
                 cdG.countDown();
                 cdE.countDown();
             }
@@ -108,6 +107,11 @@ public class ProblemOne {
         final Thread threadF = new Thread(new Runnable() {
             @Override
             public void run() {
+                try {
+                    cdF.await();
+                } catch (InterruptedException e) {
+                    
+                }
                 System.out.print(taskF.execute() + ",");
             }
         });
