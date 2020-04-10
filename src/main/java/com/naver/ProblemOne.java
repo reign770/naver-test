@@ -110,7 +110,7 @@ public class ProblemOne {
                 try {
                     cdF.await();
                 } catch (InterruptedException e) {
-                    
+
                 }
                 System.out.print(taskF.execute() + ",");
             }
@@ -140,10 +140,22 @@ public class ProblemOne {
         threadF.start();
         threadG.start();
         threadH.start();
+
+        try {
+            threadA.join();
+            threadB.join();
+            threadC.join();
+            threadD.join();
+            threadE.join();
+            threadF.join();
+            threadG.join();
+            threadH.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
-
         //TODO:不好意思，没有理解题目的意思
     }
 }
